@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Loader2, Search, Target, TrendingUp, Eye, Plus, BookOpen, Tag } from "lucide-react"
+import { SparklesCore } from "@/components/ui/sparkles"
 
 interface SEOAnalysis {
   readabilityScore: number
@@ -120,11 +121,11 @@ export default function SEOAnalyzer() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br p-4">
-      <div>
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">SEO Text Analyzer</h1>
-          <p className="text-lg text-gray-600">
+    <div className="min-h-screen bg-gradient-to-br p-4 bg-black">
+      <div className="m-4">
+        <div className="text-center mb-8 mt-4">
+          <h1 className="text-4xl font-bold text-gray-100 mb-2">SEO Text Analyzer</h1>
+          <p className="text-lg text-gray-200">
             Optimize your content with AI-powered SEO insights and keyword suggestions
           </p>
         </div>
@@ -255,9 +256,9 @@ export default function SEOAnalyzer() {
 
         {/* Keywords and Preview Section */}
         {analysis && (
-          <div className="grid lg:grid-cols-2 gap-6 mt-6">
+          <div className="grid lg:grid-cols-2 gap-6 mt-6 ">
             {/* Recommended Keywords */}
-            <Card>
+            <Card >
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Tag className="w-5 h-5" />
@@ -320,7 +321,30 @@ export default function SEOAnalyzer() {
             </Card>
           </div>
         )}
+      
+        <div className="h-40 relative w-full">
+        {/* Gradients */}
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+ 
+        {/* Core component */}
+        <SparklesCore
+          background="transparent"
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={1200}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+ 
+        {/* Radial Gradient to prevent sharp edges */}
+        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
+      </div>
+
+
     </div>
   )
 }

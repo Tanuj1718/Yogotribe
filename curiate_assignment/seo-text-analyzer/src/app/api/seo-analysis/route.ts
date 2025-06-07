@@ -73,7 +73,14 @@ export async function POST(request: NextRequest) {
     }
 
     // Get TextRazor API key from environment variable
-    const apiKey = process.env.TEXTRAZOR_API_KEY || "YOUR_TEXTRAZOR_API_KEY"
+    const apiKey = process.env.TEXTRAZOR_API_KEY
+
+    if (!apiKey || apiKey === "YOUR_TEXTRAZOR_API_KEY") {
+      console.warn("TextRazor API key not configured, using fallback analysis")
+      // Use fallback analysis without TextRazor
+      const analysis = processTextRazorResponse(text, { response: { entities: [], topics: [], sentences: [] } })
+      return NextResponse.json(analysis)
+    }
 
     // Call TextRazor API
     const textRazorResponse = await analyzeWithTextRazor(text, apiKey)
@@ -84,7 +91,15 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(analysis)
   } catch (error) {
     console.error("SEO Analysis error:", error)
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 })
+
+    // Try to provide a fallback response
+    try {
+      const { text } = await request.json()
+      const fallbackAnalysis = processTextRazorResponse(text, { response: { entities: [], topics: [], sentences: [] } })
+      return NextResponse.json(fallbackAnalysis)
+    } catch (fallbackError) {
+      return NextResponse.json({ error: "Internal server error" }, { status: 500 })
+    }
   }
 }
 
@@ -95,21 +110,36 @@ async function analyzeWithTextRazor(text: string, apiKey: string): Promise<TextR
   formData.append("text", text)
   formData.append("extractors", "entities,topics,words,sentences")
 
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "x-textrazor-key": apiKey,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: formData.toString(),
-  })
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "x-textrazor-key": apiKey,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: formData.toString(),
+    })
 
-  if (!response.ok) {
-    const errorText = await response.text()
-    throw new Error(`TextRazor API error: ${response.status} ${errorText}`)
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error(`TextRazor API error: ${response.status} ${errorText}`)
+      throw new Error(`TextRazor API error: ${response.status}`)
+    }
+
+    const result = await response.json()
+    console.log("TextRazor response:", JSON.stringify(result, null, 2))
+    return result
+  } catch (error) {
+    console.error("TextRazor API call failed:", error)
+    // Return a fallback response structure
+    return {
+      response: {
+        entities: [],
+        topics: [],
+        sentences: [],
+      },
+    }
   }
-
-  return await response.json()
 }
 
 function processTextRazorResponse(originalText: string, textRazorResponse: TextRazorResponse): SEOAnalysis {
@@ -118,7 +148,7 @@ function processTextRazorResponse(originalText: string, textRazorResponse: TextR
   // Extract entities and topics
   const entities = (response.entities || []).map((entity) => ({
     id: entity.id,
-    type: entity.type[0] || "Unknown",
+    type: entity.type && entity.type.length > 0 ? entity.type[0] : "Unknown",
     matchedText: entity.matchedText,
     relevanceScore: entity.relevanceScore,
     confidenceScore: entity.confidenceScore,
