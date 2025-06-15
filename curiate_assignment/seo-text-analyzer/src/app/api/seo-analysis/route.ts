@@ -64,6 +64,7 @@ interface TextRazorWord {
   endingPos: number
 }
 
+//Processes the TextRazor API response and returns the analysis result.
 export async function POST(request: NextRequest) {
   try {
     const { text } = await request.json()
@@ -103,6 +104,8 @@ export async function POST(request: NextRequest) {
   }
 }
 
+
+// Sends a POST request to the TextRazor API with the text and the specified apiKey and return api response
 async function analyzeWithTextRazor(text: string, apiKey: string): Promise<TextRazorResponse> {
   const url = "https://api.textrazor.com/"
 
@@ -142,6 +145,7 @@ async function analyzeWithTextRazor(text: string, apiKey: string): Promise<TextR
   }
 }
 
+// This function processes the TextRazor API response and calculates SEO metrics
 function processTextRazorResponse(originalText: string, textRazorResponse: TextRazorResponse): SEOAnalysis {
   const { response } = textRazorResponse
 
@@ -211,6 +215,7 @@ function processTextRazorResponse(originalText: string, textRazorResponse: TextR
   }
 }
 
+// estimates the syllable count for a given word by applying a set of heuristics
 function countSyllables(word: string): number {
   word = word.toLowerCase()
   if (word.length <= 3) return 1
@@ -220,6 +225,8 @@ function countSyllables(word: string): number {
   return matches ? matches.length : 1
 }
 
+
+// generates a list of recommended keywords based on entities and topics
 function generateRecommendedKeywords(entities: Entity[], topics: Topic[]): string[] {
   // Extract keywords from entities and topics
   const entityKeywords = entities
