@@ -130,7 +130,7 @@ export default function SEOAnalyzer() {
           </p>
         </div>
 
-        <div className="gap-6">
+        <div>
           {/* Input Section */}
           <Card className="h-fit ">
             <CardHeader>
@@ -172,155 +172,158 @@ export default function SEOAnalyzer() {
           </Card>
 
           {/* Results Section */}
-          {analysis && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5" />
-                  SEO Analysis Results
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {/* Readability Score */}
-                <div>
-                  <h3 className="font-semibold mb-2">Readability Score</h3>
-                  <div className="flex items-center gap-3">
-                    <div className={`text-2xl font-bold ${getReadabilityColor(analysis.readabilityScore)}`}>
-                      {analysis.readabilityScore}/100
-                    </div>
-                    <Badge variant={analysis.readabilityScore >= 60 ? "default" : "destructive"}>
-                      {getReadabilityLabel(analysis.readabilityScore)}
-                    </Badge>
-                  </div>
-                </div>
-
-                <Separator />
-
-                {/* Text Metrics */}
-                <div>
-                  <h3 className="font-semibold mb-3">Text Metrics</h3>
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div className="bg-blue-50 p-3 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">{analysis.wordCount}</div>
-                      <div className="text-sm text-gray-600">Words</div>
-                    </div>
-                    <div className="bg-green-50 p-3 rounded-lg">
-                      <div className="text-2xl font-bold text-green-600">{analysis.sentenceCount}</div>
-                      <div className="text-sm text-gray-600">Sentences</div>
-                    </div>
-                    <div className="bg-purple-50 p-3 rounded-lg">
-                      <div className="text-2xl font-bold text-purple-600">{analysis.avgWordsPerSentence}</div>
-                      <div className="text-sm text-gray-600">Avg Words/Sentence</div>
+          <div className="mt-8">
+            {analysis && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5" />
+                    SEO Analysis Results
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  {/* Readability Score */}
+                  <div>
+                    <h3 className="font-semibold mb-2">Readability Score</h3>
+                    <div className="flex items-center gap-3">
+                      <div className={`text-2xl font-bold ${getReadabilityColor(analysis.readabilityScore)}`}>
+                        {analysis.readabilityScore}/100
+                      </div>
+                      <Badge variant={analysis.readabilityScore >= 60 ? "default" : "destructive"}>
+                        {getReadabilityLabel(analysis.readabilityScore)}
+                      </Badge>
                     </div>
                   </div>
-                </div>
 
-                <Separator />
+                  <Separator />
 
-                {/* Topics */}
-                {analysis.topics && analysis.topics.length > 0 && (
-                  <>
-                    <div>
-                      <h3 className="font-semibold mb-3 flex items-center gap-2">
-                        <BookOpen className="w-4 h-4" />
-                        Detected Topics
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {analysis.topics.slice(0, 5).map((topic, index) => (
-                          <Badge key={index} variant="outline" className="bg-blue-50">
-                            {topic.label} ({Math.round(topic.score * 100)}%)
-                          </Badge>
-                        ))}
+                  {/* Text Metrics */}
+                  <div>
+                    <h3 className="font-semibold mb-3">Text Metrics</h3>
+                    <div className="grid grid-cols-3 gap-4 text-center">
+                      <div className="bg-blue-50 p-3 rounded-lg">
+                        <div className="text-2xl font-bold text-blue-600">{analysis.wordCount}</div>
+                        <div className="text-sm text-gray-600">Words</div>
+                      </div>
+                      <div className="bg-green-50 p-3 rounded-lg">
+                        <div className="text-2xl font-bold text-green-600">{analysis.sentenceCount}</div>
+                        <div className="text-sm text-gray-600">Sentences</div>
+                      </div>
+                      <div className="bg-purple-50 p-3 rounded-lg">
+                        <div className="text-2xl font-bold text-purple-600">{analysis.avgWordsPerSentence}</div>
+                        <div className="text-sm text-gray-600">Avg Words/Sentence</div>
                       </div>
                     </div>
-                    <Separator />
-                  </>
-                )}
+                  </div>
 
-                {/* SEO Suggestions */}
-                <div>
-                  <h3 className="font-semibold mb-3">SEO Suggestions</h3>
-                  <ul className="space-y-2">
-                    {analysis.suggestions.map((suggestion, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
-                        {suggestion}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          )}
+                  <Separator />
+
+                  {/* Topics */}
+                  {analysis.topics && analysis.topics.length > 0 && (
+                    <>
+                      <div>
+                        <h3 className="font-semibold mb-3 flex items-center gap-2">
+                          <BookOpen className="w-4 h-4" />
+                          Detected Topics
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {analysis.topics.slice(0, 5).map((topic, index) => (
+                            <Badge key={index} variant="outline" className="bg-blue-50">
+                              {topic.label} ({Math.round(topic.score * 100)}%)
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <Separator />
+                    </>
+                  )}
+
+                  {/* SEO Suggestions */}
+                  <div>
+                    <h3 className="font-semibold mb-3">SEO Suggestions</h3>
+                    <ul className="space-y-2">
+                      {analysis.suggestions.map((suggestion, index) => (
+                        <li key={index} className="flex items-start gap-2 text-sm">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
+                          {suggestion}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
         </div>
 
         {/* Keywords and Preview Section */}
-        {analysis && (
-          <div className="grid lg:grid-cols-2 gap-6 mt-6 ">
-            {/* Recommended Keywords */}
-            <Card >
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Tag className="w-5 h-5" />
-                  Recommended Keywords
-                </CardTitle>
-                <CardDescription>Click to insert keywords naturally into your text</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {analysis.recommendedKeywords.map((keyword, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="font-medium">{keyword}</span>
+          {analysis && (
+            <div className="grid lg:grid-cols-2 gap-6 mt-6 ">
+              {/* Recommended Keywords */}
+              <Card >
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Tag className="w-5 h-5" />
+                    Recommended Keywords
+                  </CardTitle>
+                  <CardDescription>Click to insert keywords naturally into your text</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {analysis.recommendedKeywords.map((keyword, index) => (
+                      <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <span className="font-medium">{keyword}</span>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => insertKeyword(keyword)}
+                          disabled={insertLoading === keyword}
+                          className="hover:bg-blue-50 hover:border-blue-300"
+                        >
+                          {insertLoading === keyword ? (
+                            <Loader2 className="w-4 h-4 mr-1 animate-spin" />
+                          ) : (
+                            <Plus className="w-4 h-4 mr-1" />
+                          )}
+                          Insert
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Text Preview */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Eye className="w-5 h-5" />
+                    Optimized Text Preview
+                  </CardTitle>
+                  <CardDescription>Your text with inserted keywords</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-gray-50 p-4 rounded-lg min-h-[200px] max-h-[400px] overflow-y-auto">
+                    <p className="text-sm leading-relaxed whitespace-pre-wrap">
+                      {modifiedText || "Your optimized text will appear here after inserting keywords..."}
+                    </p>
+                  </div>
+                  {modifiedText && (
+                    <div className="mt-4 flex justify-end">
                       <Button
-                        size="sm"
                         variant="outline"
-                        onClick={() => insertKeyword(keyword)}
-                        disabled={insertLoading === keyword}
-                        className="hover:bg-blue-50 hover:border-blue-300"
+                        onClick={() => navigator.clipboard.writeText(modifiedText)}
+                        className="text-sm"
                       >
-                        {insertLoading === keyword ? (
-                          <Loader2 className="w-4 h-4 mr-1 animate-spin" />
-                        ) : (
-                          <Plus className="w-4 h-4 mr-1" />
-                        )}
-                        Insert
+                        Copy Optimized Text
                       </Button>
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Text Preview */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Eye className="w-5 h-5" />
-                  Optimized Text Preview
-                </CardTitle>
-                <CardDescription>Your text with inserted keywords</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-gray-50 p-4 rounded-lg min-h-[200px] max-h-[400px] overflow-y-auto">
-                  <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                    {modifiedText || "Your optimized text will appear here after inserting keywords..."}
-                  </p>
-                </div>
-                {modifiedText && (
-                  <div className="mt-4 flex justify-end">
-                    <Button
-                      variant="outline"
-                      onClick={() => navigator.clipboard.writeText(modifiedText)}
-                      className="text-sm"
-                    >
-                      Copy Optimized Text
-                    </Button>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          )}
           </div>
-        )}
       
         <div className="h-40 relative w-full">
         {/* Gradients */}
