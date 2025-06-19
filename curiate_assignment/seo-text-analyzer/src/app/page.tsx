@@ -76,9 +76,9 @@ function Home() {
             Get Started
           </Button>
         </div>
-        {/* <div className='mt-16 w-full'>
+        <div className='mt-16 w-full'>
           <AnimatedTestimonials testimonials={testimonials} />
-        </div> */}
+        </div>
       </div>
     </>
   )
