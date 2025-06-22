@@ -347,7 +347,6 @@ export default function SEOAnalyzer() {
       </div>
       </div>
 
-
     </div>
   )
 }

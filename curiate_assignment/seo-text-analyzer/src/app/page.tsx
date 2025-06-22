@@ -1,4 +1,5 @@
 "use client"
+import { SidebarDemo } from '@/components/sidebar';
 import { AnimatedTestimonials } from '@/components/ui/animated-testimonials';
 import { Boxes } from '@/components/ui/background-boxes'
 import { Button } from '@/components/ui/button';
@@ -49,8 +50,8 @@ function Home() {
   ];
   return (
     <>
-
-      <div className="h-auto relative w-full overflow-hidden bg-slate-800 flex flex-col items-center justify-center gap-6">
+    <SidebarDemo/>
+      {/* <div className="h-auto relative w-full overflow-hidden bg-slate-800 flex flex-col items-center justify-center gap-6">
         <div className='flex mt-72 flex-col items-center justify-center'>
           <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
           <Boxes />
@@ -79,7 +80,7 @@ function Home() {
         <div className='mt-28 w-full'>
           <AnimatedTestimonials testimonials={testimonials} />
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
