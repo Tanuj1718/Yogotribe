@@ -50,8 +50,8 @@ function Home() {
   return (
     <>
 
-      <div className="h-screen relative w-full overflow-hidden bg-slate-800 flex flex-col items-center justify-center gap-6">
-        <div className='flex flex-col items-center justify-center'>
+      <div className="h-auto relative w-full overflow-hidden bg-slate-800 flex flex-col items-center justify-center gap-6">
+        <div className='flex mt-72 flex-col items-center justify-center'>
           <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
           <Boxes />
         <motion.img
@@ -76,7 +76,7 @@ function Home() {
             Get Started
           </Button>
         </div>
-        <div className='mt-16 w-full'>
+        <div className='mt-28 w-full'>
           <AnimatedTestimonials testimonials={testimonials} />
         </div>
       </div>
