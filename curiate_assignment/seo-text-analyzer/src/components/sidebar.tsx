@@ -13,29 +13,29 @@ import { Sidebar, SidebarBody, SidebarLink } from "./ui/sidebar";
 export function SidebarDemo() {
   const links = [
     {
-      label: "Dashboard",
-      href: "#",
+      label: "SEO Tool",
+      href: "/seo-tool",
       icon: (
         <IconBrandTabler className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
       label: "Profile",
-      href: "#",
+      href: "/profile",
       icon: (
         <IconUserBolt className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
-      label: "Settings",
-      href: "#",
+      label: "Pricing",
+      href: "/pricing",
       icon: (
         <IconSettings className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
       label: "Logout",
-      href: "#",
+      href: "/logout",
       icon: (
         <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
