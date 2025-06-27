@@ -62,11 +62,11 @@ export function SidebarDemo() {
           <div>
             <SidebarLink
               link={{
-                label: "Manu Arora",
+                label: "Shraddha K",
                 href: "#",
                 icon: (
                   <img
-                    src="https://assets.aceternity.com/manu.png"
+                    src="https://t3.gstatic.com/images?q=tbn:ANd9GcRFwQcvntDypuiAjCT5vbXp8lBNdhbylkR_DRFqamaEG_vOjvF2"
                     className="h-7 w-7 shrink-0 rounded-full"
                     width={50}
                     height={50}
