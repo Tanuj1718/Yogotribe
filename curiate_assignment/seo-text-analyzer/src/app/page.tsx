@@ -1,11 +1,5 @@
 "use client"
 import { SidebarDemo } from '@/components/sidebar';
-import { AnimatedTestimonials } from '@/components/ui/animated-testimonials';
-import { Boxes } from '@/components/ui/background-boxes'
-import { Button } from '@/components/ui/button';
-import ColourfulText from '@/components/ui/colourful-text'
-import { cn } from '@/lib/utils'
-import { motion } from "motion/react";
 import { useRouter } from 'next/navigation';
 import React from 'react'
 
