@@ -1,6 +1,5 @@
 "use client"
 
-import { Card, CardDescription, CardSkeletonContainer, CardTitle, Skeleton } from "@/components/card";
 import { Cover } from "@/components/ui/cover";
 
 function Pricing() {
@@ -20,40 +19,15 @@ function Pricing() {
             </div>
             <div className="flex gap-6 items-center my-16 justify-around w-full flex-wrap bg-amber-600">
                 <div>
-                    <Card>
-                        <CardSkeletonContainer>
-                        <Skeleton />
-                        </CardSkeletonContainer>
-                        <CardTitle>Damn good card</CardTitle>
-                        <CardDescription>
-                        A card that showcases a set of tools that you use to create your
-                        product.
-                        </CardDescription>
-                    </Card>
+                    
                 </div>
                 <div>
-                    <Card>
-                        <CardSkeletonContainer>
-                        <Skeleton />
-                        </CardSkeletonContainer>
-                        <CardTitle>Damn good card</CardTitle>
-                        <CardDescription>
-                        A card that showcases a set of tools that you use to create your
-                        product.
-                        </CardDescription>
-                    </Card>
+                    
+                    
                 </div>
                 <div>
-                    <Card>
-                        <CardSkeletonContainer>
-                        <Skeleton />
-                        </CardSkeletonContainer>
-                        <CardTitle>Damn good card</CardTitle>
-                        <CardDescription>
-                        A card that showcases a set of tools that you use to create your
-                        product.
-                        </CardDescription>
-                    </Card>
+                    
+                    
                 </div>
             </div>
         </div>
