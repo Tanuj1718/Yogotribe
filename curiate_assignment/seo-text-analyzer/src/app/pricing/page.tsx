@@ -18,68 +18,63 @@ function Pricing() {
                     Each plan comes with all the SEO goodness—content analysis, keyword wizardry, and magic backlink powers. No matter your goal, we’ll help you "SEO your way to the top!" (Or at least, to page one).</p>
                 </div>
             </div>
-            <div className="flex gap-6 items-center my-16 justify-around w-full flex-wrap bg-amber-600">
+            <div className=" flex gap-6 items-center my-16 justify-around w-full flex-wrap bg-amber-600">
                 <div>
-                    <CardSpotlight className="h-96 w-96">
+                    <CardSpotlight className="h-[500px] w-96">
                     <p className="text-xl font-bold relative z-20 mt-2 text-white">
-                        Authentication steps
+                        Starter – Just Getting Google’s Attention
                     </p>
                     <div className="text-neutral-200 mt-4 relative z-20">
-                        Follow these steps to secure your account:
-                        <ul className="list-none  mt-2">
-                        <Step title="Enter your email address" />
-                        <Step title="Create a strong password" />
-                        <Step title="Set up two-factor authentication" />
-                        <Step title="Verify your identity" />
+                        Perfect for bloggers, freelancers, or anyone who still thinks “meta description” is a dating profile.
+                        <ul className="list-none  mt-6">
+                        <Step title="🔍 Analyze up to 100 pages/month"/>
+                        <Step title="📈 Basic SEO insights (no PhD in algorithms required)" />
+                        <Step title="🚦 Keyword tracking for 5 keywords – baby steps, but important ones" />
                         </ul>
-      </div>
-      <p className="text-neutral-300 mt-4 relative z-20 text-sm">
-        Ensuring your account is properly secured helps protect your personal
-        information and data.
-      </p>
-    </CardSpotlight>
+                </div>
+                <p className="text-neutral-300 mt-4 relative z-20 text-sm">
+                    Just like your first gym session — light, manageable, and builds core strength (of your website).
+                </p>
+                </CardSpotlight>
 
                 </div>
                 <div>
-                    <CardSpotlight className="h-96 w-96">
+                    <CardSpotlight className="h-[500px] w-96">
                         <p className="text-xl font-bold relative z-20 mt-2 text-white">
-                            Authentication steps
+                             Pro – Because You Actually Want Traffic
                         </p>
                         <div className="text-neutral-200 mt-4 relative z-20">
-                            Follow these steps to secure your account:
-                            <ul className="list-none  mt-2">
-                            <Step title="Enter your email address" />
-                            <Step title="Create a strong password" />
-                            <Step title="Set up two-factor authentication" />
-                            <Step title="Verify your identity" />
+                            For small businesses, content creators, and marketers who’ve moved beyond “Why am I still on page 7?”
+                            
+                            <ul className="list-none  mt-6">
+                            <Step title="🧠 Analyze up to 1,000 pages/month" />
+                            <Step title="🚀 Advanced SEO suggestions with action plans" />
+                            <Step title="📊 Track 50 keywords – because guesswork is so 2009" />
                             </ul>
-      </div>
-      <p className="text-neutral-300 mt-4 relative z-20 text-sm">
-        Ensuring your account is properly secured helps protect your personal
-        information and data.
-      </p>
-    </CardSpotlight>
+                        </div>
+                        <p className="text-neutral-300 mt-4 relative z-20 text-sm">
+                    Like a personal trainer for your website — except we won’t yell at you (unless you ignore H1 tags again).
+                        </p>
+                        </CardSpotlight>
                     
                 </div>
                 <div>
-                    <CardSpotlight className="h-96 w-96">
+                    <CardSpotlight className="h-[500px] w-96">
                         <p className="text-xl font-bold relative z-20 mt-2 text-white">
-                            Authentication steps
+                            Agency – Dominate Search Like a Boss
                         </p>
                         <div className="text-neutral-200 mt-4 relative z-20">
-                            Follow these steps to secure your account:
+                            Built for agencies and large teams who need SEO tools with more power than your grandma’s station wagon.
                             <ul className="list-none  mt-2">
-                            <Step title="Enter your email address" />
-                            <Step title="Create a strong password" />
-                            <Step title="Set up two-factor authentication" />
-                            <Step title="Verify your identity" />
+                            <Step title="🌍 Analyze unlimited pages" />
+                            <Step title="🧩 White-label reports for clients (so you look super smart)" />
+                            <Step title="📡 Track up to 500 keywords – because you’ve got an empire to manage" />
                             </ul>
-      </div>
-      <p className="text-neutral-300 mt-4 relative z-20 text-sm">
-        Ensuring your account is properly secured helps protect your personal
-        information and data.
-      </p>
-    </CardSpotlight>
+                        </div>
+                        <p className="text-neutral-300 mt-4 relative z-20 text-sm">
+                            Like an SEO lightsaber — powerful, elegant, and capable of slicing through the competition.
+                        </p>
+                        </CardSpotlight>
                     
                 </div>
             </div>
