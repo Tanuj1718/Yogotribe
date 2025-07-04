@@ -124,37 +124,37 @@ const Home = ()=> {
   const testimonials = [
     {
       quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
+        "I’m a developer, which means I break out in hives if I see anything with a 'marketing' label. But your SEO analyzer? It’s like the VS Code of SEO—clean, smart, and it doesn’t ask me to read a 40-page eBook first. I actually enjoyed optimizing my site. What is happening to me?",
+      name: "Nikhil V.",
+      designation: "Founder of CodeCurry",
       src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Michael Rodriguez",
-      designation: "CTO at InnovateSphere",
+        "I used to think SEO stood for 'Seriously Enraging Operations.' But this tool changed that. Now I can actually find keywords faster than I can find my socks in the morning. My site's traffic doubled in 3 weeks. My chai blog is finally reaching more than just my mom!",
+      name: "Anjali M.",
+      designation: "Digital Marketer at ChaiChaska.in",
       src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       quote:
-        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-      name: "Emily Watson",
-      designation: "Operations Director at CloudScale",
+        "I had no idea what I was doing when they told me to 'run an SEO audit.' I thought they meant a literal audit. Your tool saved me from Googling 'what is H1 and why does it hate me?' My boss thinks I’m a genius now. I'm not correcting him.",
+      name: "Dijkstra P.",
+      designation: "Intern at ClickSpree Agency",
       src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       quote:
-        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+        "I’ve used every tool under the sun, from the free ones to those that require sacrificing a goat and your wallet. Yours? Fast, accurate, clean UI, and doesn’t make me cry inside. I use it on client sites, my own projects, and sometimes just for fun. Don’t judge me.",
       name: "James Kim",
-      designation: "Engineering Lead at DataPro",
+      designation: "SEO Consultant",
       src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Lisa Thompson",
-      designation: "VP of Technology at FutureNet",
+        "Running a business, I barely have time to eat lunch, let alone learn about meta tags and backlinks. Your tool gave me a full SEO report in less time than it takes my cat to knock something off the shelf. And yes, I'm ranking better now—and so is the cat, on Instagram.",
+      name: "Nikita P.",
+      designation: "Owner of PetPurrfection Groomers",
       src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
