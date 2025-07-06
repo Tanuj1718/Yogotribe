@@ -21,7 +21,7 @@ function Pricing() {
             </div>
             <BackgroundBeamsWithCollision className="bg-black h-full">
                 <div className=" flex gap-6 items-center my-16 justify-around w-full flex-wrap">
-                    <div className="bg-black">
+                    <div className="bg-black border border-blue-400 rounded-md">
                         <CardSpotlight className="h-[500px] w-96">
                         <p className="text-xl font-bold relative z-20 mt-2 text-white">
                             Starter – Just Getting Google’s Attention
@@ -38,11 +38,11 @@ function Pricing() {
                         Just like your first gym session — light, manageable, and builds core strength (of your website).
                     </p>
                     </CardSpotlight>
-                    <button className="text-white ml-28 w-28 shadow-[inset_0_0_0_2px_#616467] hover:bg-[#8d57ab8c] px-8 py-4 rounded-4xl tracking-widest uppercase font-bold bg- z-20 hover:text-white dark:text-neutral-200 transition duration-200">
+                    <button className="text-white ml-28 w-28 mb-2 shadow-[inset_0_0_0_2px_#616467] hover:bg-[#8d57ab8c] px-8 py-4 rounded-4xl tracking-widest uppercase font-bold bg- z-20 hover:text-white dark:text-neutral-200 transition duration-200">
                         $Free
                     </button>
                     </div>
-                    <div className="bg-black">
+                    <div className="bg-black border border-blue-400 rounded-md">
                         <CardSpotlight className="h-[500px] w-96">
                             <p className="text-xl font-bold relative z-20 mt-2 text-white">
                                 Pro – Because You Actually Want Traffic
@@ -60,12 +60,12 @@ function Pricing() {
                         Like a personal trainer for your website — except we won’t yell at you (unless you ignore H1 tags again).
                             </p>
                             </CardSpotlight>
-                            <button className="text-white w-28 ml-28 shadow-[inset_0_0_0_2px_#616467] hover:bg-[#8d57ab8c] px-8 py-4 rounded-4xl tracking-widest uppercase font-bold bg- z-20 hover:text-white dark:text-neutral-200 transition duration-200">
+                            <button className="text-white w-28 ml-28 mb-2 shadow-[inset_0_0_0_2px_#616467] hover:bg-[#8d57ab8c] px-8 py-4 rounded-4xl tracking-widest uppercase font-bold bg- z-20 hover:text-white dark:text-neutral-200 transition duration-200">
                                 $30
                             </button>
                         
                     </div>
-                    <div className="bg-black">
+                    <div className="bg-black border border-blue-400 rounded-md">
                         <CardSpotlight className="h-[500px] w-96">
                             <p className="text-xl font-bold relative z-20 mt-2 text-white">
                                 Agency – Dominate Search Like a Boss
@@ -82,7 +82,7 @@ function Pricing() {
                                 Like an SEO lightsaber — powerful, elegant, and capable of slicing through the competition.
                             </p>
                             </CardSpotlight>
-                            <button className="text-white w-28 ml-28 shadow-[inset_0_0_0_2px_#616467] hover:bg-[#8d57ab8c] px-8 py-4 rounded-4xl tracking-widest uppercase font-bold bg- z-20 hover:text-white dark:text-neutral-200 transition duration-200">
+                            <button className="text-white w-28 ml-28 mb-2 shadow-[inset_0_0_0_2px_#616467] hover:bg-[#8d57ab8c] px-8 py-4 rounded-4xl tracking-widest uppercase font-bold bg- z-20 hover:text-white dark:text-neutral-200 transition duration-200">
                                 $50
                             </button>
                         
